@@ -21,4 +21,24 @@ This is an independent js file that provides the API to store new time series ob
 db.js
 ```
 We used MongoDB in Modulus to be our database. To make sure the server can be launched, replace the username and password with your own user name and password if you have one already. Otherwise, register on https://modulus.io/.
+```
+package.json
+```
+This specifies all the dependencies that app.js requires. This actual modules are in the node_modules folder.
+```
+views
+```
+This folder contains files launched by the node.js server (app.js)
+```
+public
+```
+This folder contains dependent js, css, and img files for the front-end interface.
+```
+models
+```
+This folder contains database schema. Currently we have two schemas, the user profile schema and the object info schema. The object info one has been moved to app.js for test convenience.
+```
+passport
+```
+This folder contains js files for user authentication.
 
