@@ -1,4 +1,4 @@
-####active-learning-application
+###Active Learning Application
 
 ============================================
 #### Authors
