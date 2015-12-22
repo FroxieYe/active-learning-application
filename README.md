@@ -1,10 +1,10 @@
 ###Active Learning Application
 
 ============================================
-#### Authors
+#### Author
 * Wenshuai Ye \<wenshuaiye@g.harvard.edu\>
 
-#### Advisors
+#### Advisor
 * Pavlos Protopapas \<pavlos@seas.harvard.edu\>
 
 #### Acknowledgements
