@@ -3,7 +3,6 @@ var path = require('path');
 var fs = require('fs');
 var favicon = require('static-favicon');
 var logger = require('morgan');
-var multer  = require('multer');
 var cookieParser = require('cookie-parser');
 var bodyParser = require('body-parser');
 var User = require('./models/user');
@@ -122,35 +121,6 @@ app.get('/about', function (req, res) {
         page: 5
     });
 });
-
-//app.use(multer({ dest: './uploads/',
-app.use(multer({ dest: './public/img/',
-    rename: function (fieldname, filename) {
-        return filename+Date.now();
-    },
-    onFileUploadStart: function (file) {
-        console.log(file.originalname + ' is starting ...')
-    },
-    onFileUploadComplete: function (file) {
-        console.log(file.fieldname + ' uploaded to  ' + file.path)
-        done=true;
-    }
-}))
-
-app.post('/photo/uploaded',function (req,res){
-    if(done==true){
-        console.log(req.files);
-        profilePic = "../" + req.files.path;
-        res.end("File uploaded.");
-    }
-});
-
-app.get('/photo', function(req, res) {
-    /*
-    res.render("upload.ejs")
-    */
-    res.end("This is temperarily unavailable.");
-})
 
 var cur;
 var labels = ['NV', 'QSO', 'BE', 'CEPH', 'RRL', 'EB', 'ML', 'LPV'];
