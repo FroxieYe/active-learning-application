@@ -1,0 +1,90 @@
+<head>
+<script src="../js/getQuestionWindow.js"></script>
+<title>identifySamples</title>
+<style>
+img {
+	display: block;
+	margin-left: auto;
+    margin-right: auto;
+}
+.radio-custom {
+	position: relative;
+	margin-top: 20px;
+    margin-left: 130px;
+}
+.radio-each {
+	position: relative;
+	margin-top: 5%;
+	margin-left: 40%;
+}
+.button-next {
+	display: block;
+	margin-left: 47%;
+    margin-right: auto;
+    margin-top: 30px;
+    font-size: 18px
+}
+</style>
+</head>
+<script>
+	/*
+	//specify random images below. You can have as many as you wish
+	myimages[0]="../img/jupiter.jpg"
+	myimages[1]="../img/mars.jpg"
+	myimages[2]="../img/neptune.jpg"
+	myimages[3]="../img/venus.jpg"
+
+	function random_imglink(){
+	  ry=Math.floor(Math.random()*myimages.length)
+	    document.write('<img src="'+myimages[ry]+'" border=0 width = "250" height = "250">')
+	}
+	random_imglink()
+	*/
+</script>
+
+<body>
+<form action = '/survey' method = 'post'>
+	<div id="radio-custom">
+	</div>
+	<div>
+		<label><input type="submit" value = "Next" class = "button-next">
+	</div>
+</form>
+
+</body>
+<script>
+	
+	function createRadioButton() {
+		//var divStart = '<div class="radio radio-custom">';
+		var div = document.getElementById("radio-custom");
+		for (var i=0; i<2; ++i) {
+			var radioButton = document.createElement("input");
+			radioButton.setAttribute('class', 'radio-each')
+			radioButton.type = "radio";
+			radioButton.name = "picture";
+			radioButton.value = imageNames[i];
+			div.appendChild(radioButton)
+			div.appendChild(document.createTextNode(imageNames[i]))
+			div.appendChild(document.createElement("br"))
+		}
+		//var divEnd = '</div>';
+		//document.createElement(divStart);
+		//document.createElement(radioButton);
+		//document.createElement(divEnd)
+	}
+	/*
+	function getNextImage() {
+		
+		myimages.splice(ry, 1);
+		random_imglink();
+		createRadioButton();
+	}
+	*/
+	function Redirect() {
+		myimages.splice(ry, 1);
+        window.location= "beitai.html";
+    }
+
+	createRadioButton()
+</script>
+</html>

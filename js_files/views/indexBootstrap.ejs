@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Decipher Your Image</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+  <link href="../css/animate.css" rel="stylesheet">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+  <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+  <script src="../js/getQuestionWindow.js"></script>
+  <style>
+    .hero { background: url('../img/theme.jpg'); opacity: 0.6; no-repeat center center; -webkit-background-size: cover; -moz-background-size: cover; -o-background-size: cover; background-size: cover; padding: 0 0 200px 0;  }
+
+    p {word-spacing: 1px; line-height: 25px; font-size: 14px; }
+    .button {
+      border-top-color: #666362;
+      text-align: center;
+      background: #666362;
+      width: 300px;
+      padding: 5px 10px;
+      -webkit-border-radius: 4px;
+      -moz-border-radius: 4px;
+      border-radius: 4px;
+
+      font: Sans-serif;
+      font-weight: bold;
+      color: white;
+      font-size: 15px;
+      margin-top: 2%;
+      vertical-align: middle;
+    }
+
+    .button:hover {
+      border-top-color: #28597a;
+      background: #28597a;
+      color: #ccc;
+      }
+    .button:active {
+      border-top-color: #1b435e;
+      background: #1b435e;
+    }
+    .page6 {
+      margin-left: 10%;
+      font-size: 16px;
+      margin-top: 3%;
+    }
+    h1.arrow { 
+      font-size: 15px; 
+      text-transform: uppercase; 
+      color: #353535; 
+      letter-spacing: 1px; background: url('../img/h1-bg.png') no-repeat center bottom; 
+      padding-bottom: 30px; 
+      font-weight: bold; }
+
+    html,body {
+      background: url('../img/themev2.jpg') no-repeat center center fixed;
+      -webkit-background-size: cover; /* For WebKit*/
+      -moz-background-size: cover;    /* Mozilla*/
+      -o-background-size: cover;      /* Opera*/
+      background-size: cover;         /* Generic*/
+    }
+
+  </style>
+</head>
+<body>
+<header>
+<nav class="navbar navbar-inverse">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <a class="navbar-brand" href="#">DEIMAGE</a>
+    </div>
+    <div>
+      <ul class="nav navbar-nav">
+        <li class="active"><a href="/home">Home</a></li>
+        <li class="dropdown"><a class="dropdown-toggle" data-toggle="dropdown" href="#">Our Solution<span class="caret"></span></a>
+          <ul class="dropdown-menu">
+            <li><a href="/photo">Upload an Time Series Graph</a></li>
+            <li><a href="/survey">Start Labeling Time Series Graph for Us</a></li>
+          </ul>
+        </li>
+        <li><a href="/statistics">Statistics</a></li>
+        <li><a href="#">Gallery</a></li>
+        <li><a href="/about">About Us</a></li>
+        <li><a href="/contact">Contact Us</a></li>
+      </ul>
+      <ul class="nav navbar-nav navbar-right">
+        <% if (!isAuthenticated) { %>
+          <li><a href="../account/signup"><span class="glyphicon glyphicon-user"></span> Sign Up</a></li>
+          <li><a href="../account"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
+        <% }
+        else { %>
+          <li class="dropdown"><a class="dropdown-toggle" data-toggle="dropdown" href="#"><%= user.username %><span class="caret"></span></a>
+            <ul class="dropdown-menu">
+              <li><a href="../profile">Profile</a></li>
+              <li><a href="../account/signout">Log out</a></li>
+            </ul>
+          </li>
+        <% } %> 
+      </ul>
+    </div>
+  </div>
+</nav>
+<% if (page == 1) { %> 
+<section>
+<div class="container">
+  <svg width="400" height="230" style = "margin-left:auto; margin-right:auto; display:block">
+    <g>
+      <text x="30" y="180" font-family="fantasy" font-size="40" fill="white" > Time Series Labeling </text>
+    </g>
+  </svg>    
+  <p><center><FONT size='3' color = 'white'>Help Us Build a Better Time Series Classifier</center></p>
+  <div id = "main">
+    <center><a href="/tutorial"><input type="button" class="button" value = "Learn More"></a></center>
+  </div>
+  <div id = "main">
+    <center>
+    <% if (!isAuthenticated) { %>
+      <a href="/account"><input type="button" class="button" value = "Start Labeling"></a>
+    <% } else { %>
+      <a href="/survey"><input type="button" class="button" value = "Start Labeling"></a>
+    <% } %>
+  </center>
+  </div>
+</div>
+</section>
+</header>
+
+<% } else if (page == 5) {
+  %>
+  <div class="container">
+  <div class="col-sm-4">
+    <img src="img/logo.png" alt="" width="240" height="240">
+  </div>
+  <div class="col-sm-4">
+    <img src="img/silhouette.jpg" class="img-circle" alt="" width="200" height="200">
+    <div>
+        <p ><FONT size="2.5" color = "white"> Wenshuai Ye is a masters student at Harvard university in Computational Science. He obtained his Bachelor of Arts in Mathematics from Washington University in St. Louis.</p>
+    </div>
+  </div>
+
+  <div class="col-sm-4 ">
+    <img src="img/silhouette.jpg" class="img-circle" alt="" width="200" height="200">
+    <div>
+        <p> <FONT size="2.5" color = "white">Pavlos Protopapas received his PhD in theoretical physics from the University of Pennsylvania. He is currently the Scientific Program Director and Lecturer at Harvard University.</p>
+    </div>
+  </div>
+</div>
+
+<% } else if (page == 6) {
+  %>
+  <div class = "page6">
+    <p><font color="white">Contact Information</p> 
+    <p><font color="white">Wenshuai Ye: wenshuaiye@g.harvard.edu</p>
+  </div>
+<% } %>
+
+</body>
+</html>
