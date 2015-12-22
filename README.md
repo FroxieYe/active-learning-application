@@ -5,7 +5,7 @@
 * Wenshuai Ye \<wenshuaiye@g.harvard.edu\>
 
 #### Advisors
-* Pavlos Protopapas
+* Pavlos Protopapas \<pavlos@seas.harvard.edu\>
 
 #### Acknowledgements
 I would like to thank Dr. Pavlos Protopapas for his invaluable assistance and insights leading to the accomplishment of this project.
