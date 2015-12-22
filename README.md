@@ -1,2 +1,5 @@
-# active-learning-application
+####active-learning-application
 This application allows users to label time series graph and enhances the performance of active learning.
+============================================
+### Authors
+* Wenshuai Ye \<wenshuaiye@g.harvard.edu\>
