@@ -20,4 +20,5 @@ This is an independent js file that provides the API to store new time series ob
 ```
 db.js
 ```
-We used MongoDB in Modulus to be our database. To make sure the server can be launched, replace the username and password with your own user name and password.
+We used MongoDB in Modulus to be our database. To make sure the server can be launched, replace the username and password with your own user name and password if you have one already. Otherwise, register on https://modulus.io/.
+
